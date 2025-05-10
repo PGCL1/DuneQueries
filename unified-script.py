@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import requests
 import asyncio
@@ -25,7 +26,7 @@ dune_headers = {
 dune_parameters = {
     "query_parameters": {
         "blockchain_name": "gnosis",
-        "number_of_days": 7
+        "number_of_days": int(sys.argv[1] if len(sys.argv) > 1 else 7)
     },
     "performance": "medium"
 }
